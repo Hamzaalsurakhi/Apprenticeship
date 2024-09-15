@@ -1,0 +1,54 @@
+﻿@using Apprenticeship.DTO
+@using Apprenticeship.Entites
+@model InsertTeamLeaderDTO
+<form id="registerForm" asp-action="Create" method="post">
+    <h2>Create a new TeamLeader.</h2>
+    <hr />
+  
+    <div class="form-floating mb-3">
+        <input asp-for="firstName" class="form-control"  />
+        <label asp-for="firstName">First Name</label>
+      
+    </div>
+    <div class="form-floating mb-3">
+        <input asp-for="secondName" class="form-control"  />
+        <label asp-for="secondName"></label>
+       
+    </div>
+    <div class="form-floating mb-3">
+        <input asp-for="thirdName" class="form-control"  />
+        <label asp-for="thirdName"></label>
+        
+    </div>
+    <div class="form-floating mb-3">
+        <input asp-for="lastName" class="form-control" />
+        <label asp-for="lastName"></label>
+
+    </div>
+    <div class="form-floating mb-3">
+        <input asp-for="email" class="form-control" />
+        <label asp-for="email"></label>
+
+    </div>
+    <div class="form-floating mb-3">
+        <input asp-for="password" class="form-control" />
+        <label asp-for="password"></label>
+
+    </div>
+    <div class="form-floating mb-3">
+        <input asp-for="confirmPassword" class="form-control" />
+        <label asp-for="confirmPassword"></label>
+
+    </div>
+    <div class="form-floating mb-3">
+        <select name="companyId" class="form-control" >
+            @foreach (var item in (List<Company>)ViewBag.Companies)
+            {
+                <option value="@item.companyId">@item.companyName</option>
+            }
+            </select>
+        <label >Company</label>
+
+    </div>
+    <button  type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
+</form>
